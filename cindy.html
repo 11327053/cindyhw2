@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何欣澄的個人網頁</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #333;
+            display: flex;
+        }
+
+        nav button {
+            flex: 1;
+            padding: 15px;
+            color: white;
+            background: #333;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav button:hover {
+            background: #555;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        /* 預設（電腦版） */
+        .layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        .left, .right {
+            flex: 1;
+            padding: 20px;
+            background: #f2f2f2;
+            border-radius: 10px;
+        }
+
+        /* 手機版 */
+        @media (max-width: 768px) {
+            body {
+                background: #fff8e1;
+            }
+
+            .layout {
+                flex-direction: column;
+            }
+
+            header {
+                background: #ff9800;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script>
+        function showSection(section) {
+            document.getElementById("about").style.display = "none";
+            document.getElementById("hobby").style.display = "none";
+
+            document.getElementById(section).style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>何欣澄的個人網頁</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('about')">個人簡介</button>
+    <button onclick="showSection('hobby')">興趣專長</button>
+</nav>
+
+<div class="container">
+
+    <div id="about" class="layout">
+        <div class="left">
+            <h2>基本資料</h2>
+            <p>姓名：何欣澄</p>
+            <p>年齡：19歲</p>
+        </div>
+
+        <div class="right">
+            <h2>自我介紹</h2>
+            <p>你好！我是何欣澄，目前19歲，正在學習作業系統。</p>
+        </div>
+    </div>
+
+    <div id="hobby" class="layout" style="display:none;">
+        <div class="left">
+            <h2>興趣</h2>
+            <p>睡覺 😴</p>
+            <p>旅遊 ✈️</p>
+        </div>
+
+        <div class="right">
+            <h2>專長</h2>
+            <p>還在努力培養中 💪</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
